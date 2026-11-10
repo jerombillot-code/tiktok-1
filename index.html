@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ViralForge — Générateur de Shorts Viraux</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <div>
+          <h1>ViralForge</h1>
+          <p class="tagline">Génère des shorts viraux en 1 clic</p>
+        </div>
+      </div>
+      <div class="badge">v1.0 Beta</div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main">
+      <!-- PANNEAU DE CONTRÔLE -->
+      <section class="panel">
+        <label class="field">
+          <span class="field-label">🎯 Sujet de la vidéo</span>
+          <input id="topic" type="text" placeholder="Ex: 3 astuces IA pour gagner du temps" value="3 faits incroyables sur l'IA"/>
+        </label>
+
+        <div class="grid-2">
+          <label class="field">
+            <span class="field-label">📂 Catégorie</span>
+            <select id="category">
+              <option value="ia">🤖 IA & Tech</option>
+              <option value="money">💰 Argent</option>
+              <option value="facts">🤯 Faits incroyables</option>
+              <option value="gaming">🎮 Gaming</option>
+              <option value="motivation">💪 Motivation</option>
+              <option value="news">📰 Actualités</option>
+              <option value="story">📖 Histoires</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">🎙️ Voix</span>
+            <select id="voice">
+              <option value="">Voix par défaut (FR)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label class="field">
+            <span class="field-label">🎨 Style visuel</span>
+            <select id="style">
+              <option value="neon">Néon Cyberpunk</option>
+              <option value="clean">Clean Minimaliste</option>
+              <option value="hype">Hype Coloré</option>
+              <option value="dark">Dark Cinéma</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">🎵 Musique</span>
+            <select id="music">
+              <option value="phonk">Phonk (tendance)</option>
+              <option value="epic">Épique</option>
+              <option value="lofi">Lo-Fi</option>
+              <option value="none">Sans musique</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="btnScript" class="btn btn-secondary">
+            ✍️ Générer le script
+          </button>
+          <button id="btnPreview" class="btn btn-secondary">
+            👁️ Aperçu
+          </button>
+          <button id="btnGenerate" class="btn btn-primary">
+            🚀 Générer la vidéo
+          </button>
+        </div>
+
+        <div class="script-box">
+          <div class="script-header">
+            <span>📝 Script viral</span>
+            <span id="scriptMeta" class="meta"></span>
+          </div>
+          <textarea id="script" rows="8" placeholder="Clique sur 'Générer le script' pour commencer..."></textarea>
+        </div>
+
+        <div id="status" class="status hidden"></div>
+      </section>
+
+      <!-- APERÇU VIDÉO -->
+      <section class="preview-panel">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div id="stage" class="stage">
+            <canvas id="canvas" width="540" height="960"></canvas>
+            <div id="subtitleLayer" class="subtitle-layer"></div>
+            <div class="overlay-progress">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="phone-home"></div>
+        </div>
+
+        <div class="preview-actions">
+          <button id="btnPlay" class="btn btn-ghost" disabled>▶️ Lire</button>
+          <button id="btnStop" class="btn btn-ghost" disabled>⏸️ Stop</button>
+          <button id="btnDownload" class="btn btn-primary" disabled>💾 Télécharger</button>
+        </div>
+
+        <div class="tips">
+          💡 Astuce : le mot-clé <b>#hashtag</b> et les <b>emojis</b> sont ajoutés automatiquement pour booster la rétention.
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>© 2025 ViralForge — Génération 100% locale dans ton navigateur</span>
+      <span>⚡ Optimisé TikTok · Shorts · Reels</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
